@@ -1,4 +1,4 @@
-const contractAddress = "0xf325B773117764446CDAb54a5f485Ed439e889f5";
+const contractAddress = "0x0D989F11d93b2b064814FaEc13BE66Fca7bF7B68";
 const adminAddress = "0x65C29c8A2653Aa4133a0ceF5Efd30A9A1d6A7d67";
 
 let web3;
@@ -90,7 +90,7 @@ async function registerVoter() {
             alert(`管理員不可為投票者。`);
             return;
         }
-        if (/^[1-9]\d*$/.test(voterWeight)) {
+        if (!/^[1-9]\d*$/.test(voterWeight)) {
             alert(`投票者權重必須為正整數。`);
             return;
         }
@@ -108,9 +108,7 @@ async function registerVoter() {
         }
     } catch (error) {
         console.log(`registerVoter Error: ${error.message}`);
-        if (error.message.include === 'INVALID_ARGUMENT') {
-            alert('請填寫正確的註冊參數。');
-        }
+        if (error.code == 'INVALID_ARGUMENT') alert('註冊失敗！請填寫正確的地址。');
     }
 }
 
@@ -186,9 +184,7 @@ async function vote() {
         alert(`投票成功，投票給提案#${proposalId}`);
     } catch (error) {
         console.log(`vote Error: ${error.message}`);
-        if (error.message.include === 'INVALID_ARGUMENT') {
-            alert('請填寫正確的提案編號。');
-        }
+        if (error.code == 'INVALID_ARGUMENT') alert('投票失敗！請填寫正確的提案編號。');
     }
 }
 
