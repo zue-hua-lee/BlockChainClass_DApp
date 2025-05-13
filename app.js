@@ -256,7 +256,6 @@ async function getProposalInfo(state) {
                 <div>[提案 #${i}]<\div>
                 <div>提出者: ${proposal.proposer}</div>
                 <div>得票數: ${proposal.voteCount}</div>
-                <div>是否獲勝: ${proposal.isWinner}</div>
             `;
             proposalElement.style.marginBottom = '5px';
             proposalsDiv.appendChild(proposalElement);
