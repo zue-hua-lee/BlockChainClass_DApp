@@ -85,7 +85,6 @@ async function registerVoter() {
     let update = false;
     const voterAddress = document.getElementById('voterAddress').value;
     const voterWeight = document.getElementById('voterWeight').value;
-    console.log("aaaaa");
     try {
         if (voterAddress == adminAddress) {
             alert(`管理員不可為投票者。`);
@@ -109,6 +108,9 @@ async function registerVoter() {
         }
     } catch (error) {
         console.log(`registerVoter Error: ${error.message}`);
+        if (error.code === 'INVALID_ARGUMENT') {
+            alert('請填寫正確的註冊參數。');
+        }
     }
 }
 
