@@ -1,4 +1,4 @@
-const contractAddress = "0xF0B65B6acD07B31E4dbD78aA4d37015594eEC5F7";
+const contractAddress = "0x65C29c8A2653Aa4133a0ceF5Efd30A9A1d6A7d67";
 const adminAddress = "0x65C29c8A2653Aa4133a0ceF5Efd30A9A1d6A7d67";
 
 let web3;
@@ -71,9 +71,10 @@ async function setTimeInfo() {
                 document.getElementById('TimeState').innerHTML = `<b>【 投票階段 】</b>`;
             } else {
                 document.getElementById('TimeState').innerHTML = `<b>【 投票結束 】</b>`;
+                document.getElementById('endVoteBtn').style.display = "block";
                 document.getElementById('restartBtn').style.display = "block";
                 document.getElementById('voteBtn').style.display = "none";
-                showResult()
+                showResult();
             }
         }
     } catch (error) {
@@ -194,6 +195,7 @@ async function endVoting() {
         await contract.methods.endVote().send({ from: accounts[0] });
         document.getElementById('restartBtn').style.display = "block";
         document.getElementById('voteBtn').style.display = "none";
+        document.getElementById('endVoteBtn').style.display = "none";
     } catch (error) {
         console.log(`endVoting Error: ${error.message}`);
     }
@@ -222,7 +224,7 @@ async function showResult() {
 
         if (!winnerFound) {
             const tempDiv = document.createElement('div');
-            tempDiv.textContent = '沒有任何提案。';
+            tempDiv.textContent = '管理員尚未結算投票結果';
             resultDiv.appendChild(tempDiv);
         }
     } catch (error) {

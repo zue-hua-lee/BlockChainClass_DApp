@@ -59,6 +59,6 @@ hr {
     margin: 10px 0;
 }
 
-#restartBtn, #voteBtn {
+#restartBtn, #endVoteBtn, #voteBtn {
     display: none;
 }
