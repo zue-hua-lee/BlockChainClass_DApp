@@ -186,6 +186,9 @@ async function vote() {
         alert(`投票成功，投票給提案#${proposalId}`);
     } catch (error) {
         console.log(`vote Error: ${error.message}`);
+        if (error.message.include === 'INVALID_ARGUMENT') {
+            alert('請填寫正確的提案編號。');
+        }
     }
 }
 
