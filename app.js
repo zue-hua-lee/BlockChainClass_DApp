@@ -85,6 +85,7 @@ async function registerVoter() {
     let update = false;
     const voterAddress = document.getElementById('voterAddress').value;
     const voterWeight = document.getElementById('voterWeight').value;
+    console.log("aaaaa");
     try {
         if (voterAddress == adminAddress) {
             alert(`管理員不可為投票者。`);
