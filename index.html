@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>簡易投票 DApp</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>簡易投票</h1>
+
+    <div id="accounts"></div>
+    <div id="message"></div>
+
+    <div id="TimeInfo">
+        <div id="TimeState"></div>
+        <div id="TimeVote" style="display: none;">
+            <div id="startTimeDisplay"></div>
+            <div id="endTimeDisplay"></div>
+        </div>
+        <div id="voteResult" style="display: none;"></div>
+    </div>
+
+    <div id="adminFunc" style="display: none;">
+        <h2>管理員功能</h2>
+        <div id="registBtn">
+            <input type="text" id="voterAddress" placeholder="地址">
+            <input type="number" id="voterWeight" placeholder="權重">
+            <button onclick="registerVoter()">註冊投票者</button>
+        </div>
+        <button id="startVoteBtn" onclick="startVoting()">開始投票</button>
+        <button id="restartBtn" onclick="restartVoting()">重新開始</button>
+        <br><br>
+        
+        <h2>查詢</h2>
+        <button onclick="getProposalInfo(1)">目前所有提案</button><br>
+        <div id="proposalInfo"></div>
+
+        <button onclick="getAllVoterInfo()">所有投票者詳情</button><br>
+        <div id="voterInfo"></div>
+    </div>
+
+    <div id="voterFunc" style="display: none;">
+        <h2>投票者功能</h2>
+        <button id="proposeBtn" onclick="propose()">提出提案</button>
+        <div id="voteBtn">
+            <input type="number" id="voteProposalId" placeholder="提案ID">
+            <button onclick="vote()">投票</button>
+        </div>
+        <br><br>
+
+        <h2>查詢</h2>
+        <button onclick="getProposalInfo(2)">目前所有提案</button><br>
+        <div id="proposalInfo2"></div>
+
+        <button onclick="getVoterStateInfo()">查詢自己的狀態</button><br>
+        <div id="voterInfo2"></div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

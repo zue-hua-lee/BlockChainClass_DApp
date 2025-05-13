@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    margin: 3px;
+    color: #007bff;
+}
+
+#accounts, #TimeInfo {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+#proposalInfo, #proposalInfo2, #voterInfo, #voterInfo2, #message {
+    margin: 5px;
+}
+
+#adminFunc, #voterFunc {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #007bff;
+    background-color: #e7f2ff;
+    border-radius: 5px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+#restartBtn, #voteBtn {
+    display: none;
+}
