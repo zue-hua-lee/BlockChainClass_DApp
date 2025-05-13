@@ -90,8 +90,8 @@ async function registerVoter() {
             alert(`管理員不可為投票者。`);
             return;
         }
-        if (voterWeight == 0) {
-            alert(`投票者權重不可為零。`);
+        if (/^[1-9]\d*$/.test(voterWeight)) {
+            alert(`投票者權重必須為正整數。`);
             return;
         }
         const state = await contract.methods.getVoterState(voterAddress).call();
