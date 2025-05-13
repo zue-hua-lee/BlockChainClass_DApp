@@ -1,4 +1,4 @@
-const contractAddress = "0x65C29c8A2653Aa4133a0ceF5Efd30A9A1d6A7d67";
+const contractAddress = "0xa44B7e923230D7f9B2003B7b43FcCE454f8bF532";
 const adminAddress = "0x65C29c8A2653Aa4133a0ceF5Efd30A9A1d6A7d67";
 
 let web3;
