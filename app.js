@@ -108,7 +108,7 @@ async function registerVoter() {
         }
     } catch (error) {
         console.log(`registerVoter Error: ${error.message}`);
-        if (error.code === 'INVALID_ARGUMENT') {
+        if (error.message.include === 'INVALID_ARGUMENT') {
             alert('請填寫正確的註冊參數。');
         }
     }
