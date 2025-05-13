@@ -87,7 +87,11 @@ async function registerVoter() {
     const voterWeight = document.getElementById('voterWeight').value;
     try {
         if (voterAddress == adminAddress) {
-            alert(`管理員不可為投票者！`);
+            alert(`管理員不可為投票者。`);
+            return;
+        }
+        if (voterWeight == 0) {
+            alert(`投票者權重不可為零。`);
             return;
         }
         const state = await contract.methods.getVoterState(voterAddress).call();
